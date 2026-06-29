@@ -164,7 +164,7 @@ export default function VerifyPage() {
       p.payment_date, p.bank_name, p.reference_number, p.status,
       p.receipt_uploaded_at, p.verified_by_name, p.verification_notes || p.rejection_reason
     ])
-    const csv = [headers, ...rows].map(r => r.map(v => `"${v || ''}"`).join(',')).join('\n')
+    const csv = [headers, ...rows].map(r => r.map(v => `"${v || ''}"`).join(',")).join('\n")
     const a = document.createElement('a')
     a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }))
     a.download = `forsa-payments-${format(new Date(), 'yyyy-MM-dd')}.csv`
