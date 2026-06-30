@@ -22,7 +22,7 @@ export default function LatePage() {
       i.email || i.student_email, i.amount, i.due_date, i.status, i.days_overdue || ''
     ])
     const csv = [['Student', 'Email', 'Amount', 'Due Date', 'Status', 'Days Overdue'], ...rows]
-      .map(r => r.map(v => `"${v || ''}"`).join(',")).join('\n")
+      .map(r => r.map(v => `"${v || ''}"`).join(',')).join('\n')
     const a = document.createElement('a')
     a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }))
     a.download = `forsa-late-${format(new Date(), 'yyyy-MM-dd')}.csv`
