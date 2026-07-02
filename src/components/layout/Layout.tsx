@@ -1,6 +1,6 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { LayoutDashboard, CreditCard, CheckCircle, AlertTriangle, BarChart3, ScrollText, LogOut, ChevronLeft, ChevronRight, Building2, Users } from 'lucide-react'
+import { LayoutDashboard, CheckCircle, AlertTriangle, BarChart3, ScrollText, LogOut, ChevronLeft, ChevronRight, Building2, Users } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import clsx from 'clsx'
 
@@ -24,9 +24,7 @@ export default function Layout() {
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       <aside className={clsx('flex flex-col bg-navy-900 transition-all duration-300 relative flex-shrink-0', collapsed ? 'w-16' : 'w-56')}>
         <div className={clsx('flex items-center h-16 px-4 border-b border-white/5 flex-shrink-0', collapsed ? 'justify-center' : 'gap-3')}>
-          <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
-            <CreditCard size={15} className="text-white" />
-          </div>
+          <img src="/logo.png" alt="FORSA" className="w-8 h-8 flex-shrink-0 object-contain" />
           {!collapsed && <div><p className="text-white font-semibold text-sm leading-none">FORSA</p><p className="text-teal-400 text-xs mt-0.5">Finance Portal</p></div>}
         </div>
         {!collapsed && <div className="px-4 pt-4 pb-1"><p className="text-xs font-semibold text-navy-400 uppercase tracking-widest">Finance & Accounting</p></div>}
